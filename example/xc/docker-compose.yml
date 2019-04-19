@@ -35,7 +35,8 @@ services:
  sitecore:
   image: "${IMAGE_PREFIX}sitecore:${TAG}"
   isolation: process
-
+  networks:
+    - exampleNetwork 
   volumes:
     - .\logs\sitecore:c:\inetpub\wwwroot\${SITECORE_SITE_NAME}\App_Data\logs
     - .\wwwroot\sitecore:C:\Workspace
